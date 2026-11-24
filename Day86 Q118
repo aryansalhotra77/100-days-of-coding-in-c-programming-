@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{
+    int arr[100], n;
+    int i, missing = 0;
+
+    printf("Enter array size: ");
+    scanf("%d", &n);
+
+    printf("Enter array elements: ");
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+        missing = missing ^ arr[i];
+    }
+
+    for (i = 0; i <= n; i++)
+    {
+        missing = missing ^ i;
+    }
+
+    printf("Missing number = %d", missing);
+
+    return 0;
+}
