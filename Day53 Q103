@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main()
+{
+    int arr[100], n, i;
+    int totalSum = 0, leftSum = 0;
+
+    printf("Enter array size: ");
+    scanf("%d", &n);
+
+    printf("Enter array elements: ");
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+        totalSum += arr[i];
+    }
+
+    for (i = 0; i < n; i++)
+    {
+        if (leftSum == totalSum - leftSum - arr[i])
+        {
+            printf("Pivot Index: %d", i);
+            return 0;
+        }
+
+        leftSum += arr[i];
+    }
+
+    printf("Pivot Index: -1");
+
+    return 0;
+}
